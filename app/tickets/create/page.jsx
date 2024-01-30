@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import CreateForm from "./CreateForm";
 
-const CreateForm = () => {
+const CreateTicket = () => {
   return (
-    <div>CreateForm</div>
-  )
-}
+    <main>
+      <h2 className="text-center">Open a New Ticket</h2>
+      <CreateForm />
+    </main>
+  );
+};
 
-export default CreateForm
+export default CreateTicket;

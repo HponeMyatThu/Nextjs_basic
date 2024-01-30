@@ -1,4 +1,3 @@
-
 import { notFound } from "next/navigation";
 import React from "react";
 
@@ -10,11 +9,13 @@ export const generateStaticParams = async () => {
   const tickets = await res.json();
 
   return tickets.map((ticket) => ({
-    id: ticket.id
+    id: ticket.id,
   }));
 };
 
 const getTicket = async (id) => {
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+
   const res = await fetch(`http://localhost:4000/tickets/` + id, {
     next: {
       revalidate: 0,
